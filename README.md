@@ -2,25 +2,6 @@
 
 This extension provides minimal syntax highlighting for GraphixLang (.pixil) files.
 
-## Requirements
-
-To use the execution feature, you must have:
-1. .NET 6.0 Runtime installed on your system
-2. The following files in the extension's `executable` directory:
-   - `graphixlang.exe` (Windows) or `graphixlang` (macOS/Linux)
-   - `GraphixLang.Presentation.dll`
-   - `GraphixLang.Presentation.runtimeconfig.json`
-   - Any other DLLs that the application depends on
-
-Alternatively, you can use a self-contained GraphixLang executable, which includes the .NET runtime and doesn't require additional installation. Note that self-contained executables are larger but more portable.
-
-## Resolving .NET Runtime Errors
-
-If you see an error like "You must install or update .NET to run this application":
-
-1. Either install the required .NET runtime version from the link in the error message
-2. Or obtain a self-contained version of the GraphixLang executable
-
 ## Installation
 
 ### Method 1: Using VSIX Package (Recommended)
@@ -70,7 +51,7 @@ If you see an error about missing DLLs or runtime issues:
 2. Ensure all required DLLs are in the executable directory
 3. Check that the runtimeconfig.json file specifies the correct .NET version
 
-## For Extension Developers
+## For Further Development
 
 When publishing the GraphixLang executable, use the following command to create a self-contained application:
 

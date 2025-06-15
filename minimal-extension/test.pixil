@@ -1,0 +1,11 @@
+IMG $myImage = "test.jpg";
+BATCH #myBatch = "images/";
+
+IF $myImage METADATA WIDTH > 1000 {
+    RESIZE $myImage (800, 600);
+}
+
+FOREACH IMG $img IN #myBatch EXPORT TO "output/" {
+    ROTATE $img LEFT;
+    WATERMARK $img $myImage 50;
+}

@@ -1,0 +1,57 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "GraphixLang",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#keywords" },
+    { "include": "#strings" },
+    { "include": "#variables" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash.graphixlang",
+          "match": "//.*$"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.graphixlang",
+          "match": "\\b(IF|ELSE|FOREACH|IN|TO)\\b"
+        },
+        {
+          "name": "storage.type.graphixlang",
+          "match": "\\b(INT|DOUBLE|STRING|IMG|BATCH)\\b"
+        },
+        {
+          "name": "keyword.other.graphixlang",
+          "match": "\\b(EXPORT|SET|RESIZE|ROTATE|WATERMARK)\\b"
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.graphixlang",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        { "name": "constant.character.escape.graphixlang", "match": "\\\\." }
+      ]
+    },
+    "variables": {
+      "patterns": [
+        {
+          "name": "variable.other.graphixlang",
+          "match": "\\$(\\w+)"
+        },
+        {
+          "name": "variable.other.batch.graphixlang",
+          "match": "#(\\w+)"
+        }
+      ]
+    }
+  },
+  "scopeName": "source.graphixlang"
+}

@@ -1,0 +1,28 @@
+{
+  "name": "graphixlang-minimal",
+  "displayName": "GraphixLang Minimal",
+  "description": "Minimal syntax highlighting for GraphixLang (.pixil) files",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "publisher": "demo",
+  "categories": ["Programming Languages"],
+  "contributes": {
+    "languages": [
+      {
+        "id": "graphixlang",
+        "aliases": ["GraphixLang", "graphixlang"],
+        "extensions": [".pixil"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "graphixlang",
+        "scopeName": "source.graphixlang",
+        "path": "./syntaxes/graphixlang.tmLanguage.json"
+      }
+    ]
+  }
+}

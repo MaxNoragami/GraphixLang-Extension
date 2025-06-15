@@ -1,0 +1,32 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "tsc",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$tsc"],
+            "presentation": {
+                "reveal": "always",
+                "echo": true,
+                "focus": true,
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "run GraphixLang script",
+            "type": "shell",
+            "command": "node",
+            "args": [
+                "${workspaceFolder}/server/src/graphixLangService.js",
+                "${file}"
+            ],
+            "group": "none",
+            "problemMatcher": []
+        }
+    ]
+}

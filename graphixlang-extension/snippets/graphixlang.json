@@ -1,0 +1,45 @@
+{
+    "snippets": [
+        {
+            "prefix": "print",
+            "body": [
+                "print('${1:message}');"
+            ],
+            "description": "Prints a message to the console"
+        },
+        {
+            "prefix": "if",
+            "body": [
+                "if (${1:condition}) {",
+                "\t$0",
+                "}"
+            ],
+            "description": "Creates an if statement"
+        },
+        {
+            "prefix": "for",
+            "body": [
+                "for (let ${1:i} = 0; ${1:i} < ${2:count}; ${1:i}++) {",
+                "\t$0",
+                "}"
+            ],
+            "description": "Creates a for loop"
+        },
+        {
+            "prefix": "func",
+            "body": [
+                "function ${1:name}(${2:params}) {",
+                "\t$0",
+                "}"
+            ],
+            "description": "Defines a function"
+        },
+        {
+            "prefix": "var",
+            "body": [
+                "let ${1:variable} = ${2:value};"
+            ],
+            "description": "Declares a variable"
+        }
+    ]
+}

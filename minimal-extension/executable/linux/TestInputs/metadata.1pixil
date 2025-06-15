@@ -1,0 +1,33 @@
+{
+    BATCH #photos = "../TestImgs/Input" + "../TestImgs/Input2";
+    // BATCH #photos2 = #photos + "../TestImgs/Input3";
+
+    FOREACH IMG $photo IN #photos EXPORT TO "../TestImgs/Output" {
+        INT $width = METADATA $photo FWIDTH;
+        INT $height = METADATA $photo FHEIGHT;
+        STRING $name = METADATA $photo FNAME;
+        DOUBLE $size = METADATA $photo FSIZE;
+        
+        IF $width > $height {
+            ORIENTATION $photo LANDSCAPE;
+            SET $photo HUE 120;
+        }
+        ELSE {
+            ORIENTATION $photo PORTRAIT;
+            SET $photo HUE 240;
+        }
+        
+        IF $size > 5000 {
+            CROP $photo (800, 600);
+        }
+
+        STRIP METADATA $photo ALL;
+        STRIP METADATA $photo GPS, CAMERA, DESCRIPTION;
+        ADD METADATA $photo TAGS "landscape, vacation, summer";
+        ADD METADATA $photo TITLE "Summer Vacation 2025";
+        ADD METADATA $photo COPYRIGHT "© 2025 Max";
+
+        RENAME $photo METADATA $photo FNAME + "_2025";
+        RENAME $photo "MD" + COUNTER + "_" + METADATA $photo FNAME;
+    }
+}

@@ -8,6 +8,10 @@
   },
   "publisher": "demo",
   "categories": ["Programming Languages"],
+  "main": "./extension.js",
+  "activationEvents": [
+    "onLanguage:graphixlang"
+  ],
   "contributes": {
     "languages": [
       {
@@ -23,6 +27,32 @@
         "scopeName": "source.graphixlang",
         "path": "./syntaxes/graphixlang.tmLanguage.json"
       }
-    ]
+    ],
+    "commands": [
+      {
+        "command": "graphixlang.run",
+        "title": "Run GraphixLang File",
+        "icon": "$(play)"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "when": "resourceExtname == .pixil && !notebookEditorFocused",
+          "command": "graphixlang.run",
+          "group": "navigation"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "GraphixLang",
+      "properties": {
+        "graphixlang.executablePath": {
+          "type": "string",
+          "default": "",
+          "description": "Path to the GraphixLang executable. Leave empty to use the bundled executable."
+        }
+      }
+    }
   }
 }

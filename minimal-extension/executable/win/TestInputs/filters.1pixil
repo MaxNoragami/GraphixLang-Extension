@@ -1,0 +1,26 @@
+{
+    IMG $photo = "../TestImgs/Input/landscape.jpg";
+
+    // Adjust brightness (0-200)
+    SET $photo BRIGHTNESS 120;
+    
+    // Adjust contrast (0-200)
+    SET $photo CONTRAST 70;
+    
+    // Adjust opacity (0-100)
+    SET $photo OPACITY 90;
+    
+    // Add noise (0-100)
+    SET $photo NOISE 30;
+    
+    // Apply blur (0-100)
+    SET $photo BLUR 3;
+    
+    // Apply pixelation (1-100)
+    SET $photo PIXELATE 10;
+
+    // Reduce to 32 colors for a retro effect
+    QUANTIZE $photo 32;
+
+    EXPORT $photo TO "../TestImgs/Output" OGKEEP;
+}

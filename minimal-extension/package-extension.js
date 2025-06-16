@@ -124,6 +124,22 @@ The extension will automatically use the executable from this directory when run
     }
 
     
+    // Ensure logo directory exists
+    const logoDir = path.join(__dirname, 'logo');
+    if (!fs.existsSync(logoDir)) {
+        fs.mkdirSync(logoDir, { recursive: true });
+        console.log('Created logo directory. Please place logo.ico file in it.');
+    }
+    
+    // Check if logo exists
+    const logoPath = path.join(logoDir, 'logo.ico');
+    if (!fs.existsSync(logoPath)) {
+        console.warn('\nWARNING: logo.ico not found in the logo directory.');
+        console.warn(`Please place the logo at: ${logoPath}`);
+    } else {
+        console.log(`Found logo: ${logoPath}`);
+    }
+
     try {
         execSync('vsce --version', { stdio: 'ignore' });
         console.log('vsce is already installed');
@@ -133,10 +149,11 @@ The extension will automatically use the executable from this directory when run
     }
 
     
+    // Package the extension
     console.log('Creating VSIX package...');
     execSync('vsce package', { stdio: 'inherit', cwd: __dirname });
     
-    const vsixFile = 'graphixlang-minimal-0.1.0.vsix';
+    const vsixFile = 'graphixlang-0.1.0.vsix';
     const vsixPath = path.join(__dirname, vsixFile);
     
     if (fs.existsSync(vsixPath)) {

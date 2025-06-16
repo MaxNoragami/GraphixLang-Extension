@@ -20,7 +20,7 @@
       "patterns": [
         {
           "name": "keyword.control.graphixlang",
-          "match": "\\b(IF|ELSE|FOREACH|IN|TO)\\b"
+          "match": "\\b(IF|ELSE|ELIF|FOREACH|IN|TO)\\b"
         },
         {
           "name": "storage.type.graphixlang",
@@ -28,7 +28,7 @@
         },
         {
           "name": "keyword.other.graphixlang",
-          "match": "\\b(EXPORT|SET|RESIZE|ROTATE|WATERMARK)\\b"
+          "match": "\\b(EXPORT|SET|RESIZE|ROTATE|WATERMARK|QUANTIZE|RENAME|ADD|STRIP|WEBOPTIMIZE|COUNTER|METADATA)\\b"
         }
       ]
     },

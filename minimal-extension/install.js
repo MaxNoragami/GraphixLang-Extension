@@ -63,7 +63,8 @@ try {
     const extensionsDir = findExtensionsDirectory();
     
     
-    const extensionName = 'graphixlang-minimal-0.1.0';
+    // Create extension directory
+    const extensionName = 'graphixlang-0.1.0';
     const targetDir = path.join(extensionsDir, extensionName);
     
     console.log(`Installing to: ${targetDir}`);
